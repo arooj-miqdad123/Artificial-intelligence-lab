@@ -1,0 +1,44 @@
+# LISTS IN PYTHON
+# A list is a collection of elements enclosed within square brackets [].
+# Lists can store data of multiple data types.
+# Create list of multiple data types
+numbers=[10,20,30,40,50] #list of integers
+print(numbers)
+print(type(numbers))
+
+#List of strings
+strings=["apple","mango","grapes","appricot"]
+print(strings)
+print(type(strings))
+
+#List of floating point numbers
+float_nums=[22.4,7.8,6.5,9.2]
+print(float_nums)
+print(type(float_nums))
+
+#mix list
+mix=["red",5,9.8]
+print("Mix elements list: ",mix)
+print(type(mix))
+
+#Empty list
+empty=[]
+print("Empty list:",empty)
+print(type(empty))
+
+
+#List of colors
+colors=["Red","Green","Blue","Yellow","Magenta"]
+print(colors)
+print(type(colors))
+#accessing color list elements using indexes
+print("First color: ",colors[0])
+print("Last color: ",colors[-1])
+print("subset of color list: ",colors[1:3])
+
+#print first 3 colors
+print("First three color: ",colors[:3])
+#print colors from 3rd element to last element
+print("From third color to last color: ",colors[2:])
+# print all elements of list except last two
+print("All elements of color lists except last two: ",colors[:-2])
