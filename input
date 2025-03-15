@@ -1,0 +1,11 @@
+# Take input from user
+text=input("Enter your name: ")
+print("Hello ",text,"!")
+
+# Take a integer number from user
+num=int(input("Enter integer number: "))
+print("Your entered number is ",num)
+
+# Take float number from user
+float_num=float(input("Enter floating point number: "))
+print("Your entered number is ",float_num)
