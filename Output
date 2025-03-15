@@ -1,0 +1,57 @@
+#Print sentence
+print("Hello World!")
+
+#Print integer values
+print(5678)
+print(-34)
+
+#Print float value
+print(32.78)
+
+#Print complex number
+print(1+2j)
+
+# using commas to print multiple values
+print("Hello ","Arooj","!")
+
+#Concatenate Strings
+print("Learning "+"Python "+"is "+"fun.")
+
+#display output by using fstrings
+name='arooj' #strings can be stored with both single or double quotes
+age=19
+print(f"Hello Arooj! Your age is {age}")
+
+#Print multiple statements on single line
+statement1='This is first statement.'
+statement2="This is second statement."
+print(statement1);print(statement2)
+
+#Print multiline string with single quote or double quote
+print("""This is a multiline 
+      string in python
+       with triple double quotes""")
+print('''This is a multiline 
+      string in python
+       with triple single quotes''')
+
+#Performing calculations and display result
+print("10-6= " ,10-6)
+print("10+3= " ,10+3)
+
+#Display output using escape characters
+print("She said,\t \"Learning coding is fun,\"\nLet's get started.")  
+
+#Print a boolean value
+is_python="true"
+print("Is learning python easy?",is_python)
+
+#using sep and end functions of print statement
+print("Arooj","is", "learning", "Python", sep=" - ", end=".")
+
+#Display list
+colors=["Red","Green","Blue"]
+print("\nRGB:",colors)
+#Print tuple
+coordinates=(10,5)
+print("Coordinates: ",coordinates)
