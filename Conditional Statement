@@ -1,0 +1,30 @@
+num=9
+#Simple if statement
+if num> 0:
+    print(" The number is positive.")
+
+#if-else statement
+if num>0:
+     print(" The number is positive.")
+else:
+      print(" The number is negative.")
+
+#Nested if statements
+if num>0:
+     if num%2==0:
+           print(" The number is even.")
+     else:
+           print(" The number is odd.")
+else:
+      print(" The number is negative.")
+
+# if else if
+age=25
+if age < 18:
+     print("You are a minor. ")
+elif age <30:
+     print("You are a young adult. ")
+elif age <60:
+     print("You are a middle-aged. ")
+else:
+     print("You are a senior citizen. ")
