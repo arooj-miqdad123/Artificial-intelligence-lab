@@ -1,0 +1,57 @@
+#Data types in python
+#The type() function determines the data type of a variable.
+#Python supports various data types, including numbers, booleans, and complex numbers.
+print("Display values and their data types.")
+#1.Numbers:
+#Integers
+num1= 5
+print("Number is ",num1,"| Type:",type(num1)) # output: Number is  5 | Type: <class 'int'>
+
+num2=-7
+print("Number is ",num2,"| Type:",type(num2)) # output: Number is  -7 | Type: <class 'int'>
+
+#Decimals
+float_num=34.56
+print("Number is ",float_num,"| Type:",type(float_num)) #output: Number is  34.56 | Type: <class 'float'>
+float_num1=3.9e4
+print("Number is ",float_num1,"| Type:",type(float_num1)) # Output: Number is  39000.0 | Type: <class 'float'>
+
+#Complex
+cmp_num=2+4j
+print("Number is ",cmp_num,"| Type:",type(cmp_num)) # Output: Number is  (2+4j) | Type: <class 'complex'>
+cmp_num1=-9j
+print("Number is ",cmp_num1,"| Type:",type(cmp_num1)) # Output: Number is  (-0-9j) | Type: <class 'complex'>
+
+# 2.Boolean values
+#Boolean outputs are either true or False
+flag1=True
+print("Boolean  ",flag1,"| Type:",type(flag1)) # Output: Boolean   True | Type: <class 'bool'>
+
+flag2=False
+print("Boolean  ",flag2,"| Type:",type(flag2)) # Output: Boolean   False | Type: <class 'bool'>
+
+#boolean expressions
+bool1=(10>4)
+print("Boolean  ",bool1,"| Type:",type(bool1)) # Output: Boolean   True | Type: <class 'bool'>
+
+bool2=(10>14)
+print("Boolean  ",bool2,"| Type:",type(bool2)) # Output: Boolean   False | Type: <class 'bool'>
+
+#BOOL return false for 0
+check1=bool(0)
+print("check1 (for 0)",check1,"|Type: ",type(check1)) #Output check1 (for 0) False |Type:  <class 'bool'>
+
+#bool return true for non-zero number
+check2=bool(16)
+print("check2 (for 16)",check2,"|Type: ",type(check2)) #Output check2 (for 16) True |Type:  <class 'bool'>
+
+check=bool(-9)
+print("check (from -9)",check,"|Type: ",type(check)) #Output check (from -9) True |Type:  <class 'bool'>
+
+# bool return false for empty string
+check3=bool("")
+print("check3 (for empty string)",check3,"|Type: ",type(check3)) #Output check3 (for empty string) False |Type:  <class 'bool'>
+
+#bool return true for non-empty string
+check4=bool("Hello")
+print("check4 (for non_empty string)",check4,"|Type: ",type(check4)) #Output check4 (for non_empty string) True |Type:  <class 'bool'>
