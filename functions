@@ -1,0 +1,45 @@
+#function defining and calling
+
+def my_function(): 
+ print("Hello from a function") 
+ 
+my_function()
+
+#function with parameters
+
+def name_function(fname):
+  print(fname+" Miqdad")
+  
+name_function('Arooj')
+
+# default parameter
+# if you declare fuction with parameter and you call function without parameter than default parameter is used
+def my_function(country = "Norway"): print("I am from " + country) 
+
+my_function("Sweden")  
+my_function("India")  
+my_function()  
+my_function("Brazil") 
+
+# passing list as a parameter
+def my_function(food): 
+  for x in food: 
+    print(x) 
+fruits = ["apple", "banana", "cherry"] 
+my_function(fruits)
+my_function("Arooj")
+
+#function which return value
+def my_function(x): 
+  return 5 * x 
+  
+print(my_function(3)) 
+print(my_function(5)) 
+print(my_function(9))
+
+#function parameters with key value
+
+def my_function(child3, child2, child1): 
+ print("The youngest child is " + child3) 
+ 
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus")
