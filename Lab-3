@@ -1,0 +1,207 @@
+# task 1
+result = []
+for n in range(1500,2701):
+    if(n % 7 == 0 and n % 5 == 0):
+         result.append(n)
+
+print("Numbers between 1500 and 2700(include both numbers) divisible by 7 and multiples of 5 :")
+print(result)
+
+# task 2
+
+cel = int(input("Enter temperature in celsius: "))
+faren= (cel *(9/5))+32
+print("Temperature in Fahrenheit: ",faren)
+
+faren = int(input("Enter temperature in fahrenheit: "))
+cel= (faren -32)*(5/9)
+print("Temperature in Celsius: ",cel)
+
+
+
+# task 3
+num=int(input("Enter a guess number: "))
+while(num<1 or num>9):
+    print("Wrong Guess.")
+    num=int(input("Enter a number again: "))
+
+print("Well guessed!")
+
+
+
+# task 4
+for i in range(1,6):
+    for j in range(i):
+        print("*", end=" ")
+    print("\n", end="")
+for i in range(4,0,-1):
+    for j in range(i):
+        print("*", end=" ")
+    print("\n", end="")
+
+
+
+# task 5
+string = input("Enter string:")
+reversed= string[::-1]
+
+
+
+#task 6
+
+nums= []
+for i in range(5):
+    val=int(input("Enter value :  "))
+    nums.append(val)
+
+even=0
+odd=0
+for n in range(5):
+    if(nums[n]%2==0):
+        even+=1
+    else:
+        odd+=1
+print(f"Even numbers in series are: {even}")
+print(f"Odd numbers in series are: {odd}")
+        
+
+
+#task 7
+datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class":'V', "section":'A'}]
+
+for item in datalist:
+    print(f"Item: {item}, Type: {type(item)}")
+
+
+
+#task 8
+for n in range(7):
+    if(n == 3 or n==6):
+        continue
+    print(n,end=" ")
+
+
+
+# task 9
+
+n=0
+c=1
+sum=0
+for i in range(50):
+    print(n,end=" ")
+    sum+=c
+    c=n
+    n=sum
+
+
+for i in range(1,51):
+    if(i%3==0 and i%5 ==0):
+        print("FizzBuzz",end=" ")
+    elif(i % 3==0):
+        print("Fizz",end=" ")
+    elif(i % 5 == 0):
+        print("Buzz",end=" ")
+    
+    else:
+        print(i,end=" ")
+
+
+
+
+# task 10
+
+arr=[]
+m=int(input("Enter the number of rows: "))
+n=int(input("Enter number of columns: " ))
+for i in range(m):
+    arr1=[]
+    for j in range(n):
+         val =int(input("Enter value: "))
+         arr1.append(val)
+    arr.append(arr1)
+
+print(f"Two-dimensional array is:{arr}") 
+
+
+# task 11
+
+
+text=[]
+flag =True
+while flag:
+    line=input("Enter a line (blank line to stop):")
+    if line.strip() == "":
+        flag=False
+    text.append(line.lower())
+
+for l in text:
+    print(l)
+
+
+
+# task 12
+arr= []
+for i in range(5):
+    binary=int(input("Enter four digit binary number:"))
+    arr.append(binary)
+
+nums = []
+for i in arr:
+     val=int(i)
+     if val % 5==0:
+        nums=i
+
+print(f"Numbers which are divisible by 5: {nums} ")   
+
+
+# task 13
+text= input("Enter string: ")
+letters=0
+digits=0
+for i in text:
+    if(i>='A' and i<='Z'):
+        letters+=1
+    elif(i>='a' and i<='z'):
+        letters+=1
+    elif(i >='0' and i<='9'):
+        digits+=1
+    
+print(f"Letters: {letters}")
+print(f"Digits: {digits}")
+
+
+# task 14
+text= input("Enter Password: ")
+
+
+def validate_password(password):
+    letters=0
+    digits=0
+    characters =0
+    smaller=0
+    if 16 < len(text) < 6:
+        return False
+    for i in password:
+        if 'A'<= i <= 'Z'  :
+            letters+=1
+        elif 'a' <= i <='z':
+            smaller+=1
+        elif(i >='0' and i<='9'):
+            digits+=1
+        elif ( i== '@' or i == '$' or i == '#'):
+            characters+=1
+
+    if letters == 0:
+       return False
+    elif digits == 0:
+       return False
+    elif characters == 0:
+       return False
+    elif smaller==0:
+        return False
+    return True
+
+if validate_password(text):
+    print("Password is valid.")
+else:
+    print("Password is not valid.")
