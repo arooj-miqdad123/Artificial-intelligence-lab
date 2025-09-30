@@ -1,0 +1,66 @@
+import heapq
+
+def a_star_search(graph, heuristic, start, goal):
+    priority_queue = [(heuristic[start], 0, start, [start])]
+    visited = set()
+
+    while priority_queue:
+        f_cost, g_cost, current_node, path = heapq.heappop(priority_queue)
+
+        if current_node == goal:
+            return path
+        
+        if current_node in visited:
+            continue
+            
+        visited.add(current_node)
+
+        for neighbor, edge_cost in graph.get(current_node, []):
+            if neighbor not in visited:
+                new_g_cost = g_cost + edge_cost
+                new_f_cost = new_g_cost + heuristic[neighbor]
+                new_path = path + [neighbor]
+                
+                heapq.heappush(priority_queue, (new_f_cost, new_g_cost, neighbor, new_path))
+    
+    return None
+
+graph_with_weights = {
+    'A': [('B', 1), ('C', 4)],
+    'B': [('D', 2), ('E', 5)],
+    'C': [('F', 3)],
+    'D': [('G', 1)],
+    'E': [('G', 6)],
+    'F': [('H', 2)],
+    'G': [],
+    'H': []
+}
+
+heuristic_costs = {
+    'A': 8,
+    'B': 7,
+    'C': 3,
+    'D': 1,
+    'E': 6,
+    'F': 2,
+    'G': 0,
+    'H': 5
+}
+
+start_node = 'A'
+goal_node = 'G'
+
+path_found = a_star_search(graph_with_weights, heuristic_costs, start_node, goal_node)
+
+if path_found:
+    print(f"Path found from {start_node} to {goal_node}: {path_found}")
+    total_cost = 0
+    for i in range(len(path_found) - 1):
+        current_node = path_found[i]
+        next_node = path_found[i+1]
+        for neighbor, cost in graph_with_weights.get(current_node, []):
+            if neighbor == next_node:
+                total_cost += cost
+    print(f"Total cost of the path: {total_cost}")
+else:
+    print(f"No path found from {start_node} to {goal_node}.")
