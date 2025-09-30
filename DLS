@@ -1,0 +1,51 @@
+tree = {
+    'A': ['B', 'F', 'D', 'E'],
+    'B': ['K', 'J'],
+    'F': [],
+    'D': ['G', 'C'],
+    'E': ['H', 'I'],
+    'K': ['N', 'M'],
+    'J': [],
+    'G': [],
+    'C': [],
+    'H': [],
+    'I': ['L'],
+    'N': [],
+    'M': [],
+    'L': []
+}
+
+def get_children(node):
+    return tree.get(node, [])
+
+def depth_limited_search(node, goal, limit, path=[]):
+    path = path + [node]
+
+    print(f"Visiting node: {node}, Current Path: {path}, Limit: {limit}")
+
+    if node == goal:
+        return path
+
+    if limit <= 0:
+        return None
+
+    for child in get_children(node):
+        result = depth_limited_search(child, goal, limit - 1, path)
+        if result is not None:
+            return result
+    
+    return None
+
+start_node = 'A'
+goal_node = 'G'
+depth_limit = 3
+
+print(f"Starting DLS from {start_node} to {goal_node} with depth limit {depth_limit}")
+found_path = depth_limited_search(start_node, goal_node, depth_limit)
+
+if found_path:
+    print("\n---")
+    print(f"Goal found! Path: {' -> '.join(found_path)}")
+else:
+    print("\n---")
+    print("Goal not found within the specified depth limit.")
