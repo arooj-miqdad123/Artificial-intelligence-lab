@@ -1,0 +1,59 @@
+import heapq
+
+def greedy_best_first_search(graph, heuristic, start, goal):
+    
+    priority_queue = [(heuristic[start], start, [start])]
+    
+    visited = set()
+
+    while priority_queue:
+        h_cost, current_node, path = heapq.heappop(priority_queue)
+
+        if current_node == goal:
+            return path
+
+        if current_node in visited:
+            continue
+            
+        visited.add(current_node)
+
+        for neighbor in graph.get(current_node, []):
+            if neighbor not in visited:
+                new_path = path + [neighbor]
+                heapq.heappush(priority_queue, (heuristic[neighbor], neighbor, new_path))
+    
+    return None
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': ['G'],
+    'E': ['H'],
+    'F': ['I'],
+    'G': [],
+    'H': [],
+    'I': []
+}
+
+heuristic_costs = {
+    'A': 8,
+    'B': 7,
+    'C': 3,
+    'D': 1,
+    'E': 6,
+    'F': 2,
+    'G': 0,
+    'H': 5,
+    'I': 4
+}
+
+start_node = 'A'
+goal_node = 'G'
+
+path_found = greedy_best_first_search(graph, heuristic_costs, start_node, goal_node)
+
+if path_found:
+    print(f"Path found from {start_node} to {goal_node}: {path_found}")
+else:
+    print(f"No path found from {start_node} to {goal_node}.")
